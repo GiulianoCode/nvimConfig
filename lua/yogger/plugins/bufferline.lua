@@ -47,6 +47,7 @@ return {
           bg = "none",
         },
         buffer_selected = {
+          bg = "none",
           bold = true,
           italic = false,
         },
