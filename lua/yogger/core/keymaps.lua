@@ -24,6 +24,11 @@ keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x', opts)
 
+-- Mapea 'd' para usar el registro negro por defecto
+keymap.set("n", "d", '"_d', opts)
+keymap.set("n", "dd", '"_dd', opts)
+keymap.set("v", "d", '"_d', opts)
+
 -- Vertical scroll and center
 keymap.set("n", "<C-d>", "<C-d>zz", opts)
 keymap.set("n", "<C-u>", "<C-u>zz", opts)
