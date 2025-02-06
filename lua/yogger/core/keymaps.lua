@@ -10,15 +10,15 @@ local keymap = vim.keymap
 keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Clear highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear Search Highlights", noremap = true, silent = true })
 
--- save file
-keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
+-- Save File
+keymap.set("n", "<C-s>", "<cmd> w <CR>", { desc = "Save File", noremap = true, silent = true })
 
--- save file without auto-formatting
-keymap.set("n", "<leader>sn", "<cmd>noautocmd w <CR>", opts)
+-- Save File Without auto-formatting
+keymap.set("n", "<leader>sn","<cmd>noautocmd w <CR>", { desc = "Save File (No auto-formatting)", noremap = true, silent = true })
 
--- quit file
+-- Quit File
 keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
 
 -- delete single character without copying into register
@@ -46,14 +46,14 @@ keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 -- Buffers
 keymap.set("n", "<Tab>", ":bnext<CR>", opts)
 keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
-keymap.set("n", "<leader>bx", ":bdelete!<CR>", opts) -- close buffer
-keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
+keymap.set("n", "<leader>bx", ":bdelete!<CR>", { desc = "Close Buffer", noremap = true, silent = true }) -- close buffer
+keymap.set("n", "<leader>b", "<cmd> enew <CR>", { desc = "New Buffer", noremap = true, silent = true }) -- new buffer
 
 -- Window management
-keymap.set("n", "<leader>sv", "<C-w>v", opts) -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s", opts) -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=", opts) -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<CR>", opts) -- close current split window
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split Window (V)", noremap = true, silent = true }) -- split window vertically
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split Window (H)", noremap = true, silent = true }) -- split window horizontally
+keymap.set("n", "<leader>se", "<C-w>=", { desc = "Split Window Default Size", noremap = true, silent = true }) -- make split windows equal width & height
+keymap.set("n", "<leader>sx", ":close<CR>", { desc = "Close Current Split Window", noremap = true, silent = true }) -- close current split window
 
 -- Navigate between splits
 keymap.set("n", "<C-k>", ":wincmd k<CR>", opts)
@@ -62,13 +62,13 @@ keymap.set("n", "<C-h>", ":wincmd h<CR>", opts)
 keymap.set("n", "<C-l>", ":wincmd l<CR>", opts)
 
 -- Tabs
-keymap.set("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
+keymap.set("n", "<leader>to", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true }) -- open new tab
+keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true }) -- close current tab
+keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Go To Next Tab", noremap = true, silent = true }) --  go to next tab
+keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Go To Previous Tab", noremap = true, silent = true }) --  go to previous tab
 
 -- Toggle line wrapping
-keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
+keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", { desc = "Toggle Line Wrapping", noremap = true, silent = true })
 
 -- Stay in indent mode
 keymap.set("v", "<", "<gv", opts)
